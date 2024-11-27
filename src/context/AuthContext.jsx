@@ -39,7 +39,7 @@ export default function AuthContext({ children }) {
 
             // Navigate to the passenger's dashboard
             const passengerNameUrl = user.displayName.replace(/\s+/g, '-');
-            Navigate(`/passenger/${passengerNameUrl}`);
+            Navigate(`/passenger/${passengerNameUrl}`, { replace: true });
         } catch (error) {
             console.error("Error signing in with Google:", error.message);
         }
@@ -60,7 +60,7 @@ export default function AuthContext({ children }) {
                 // User exists, redirect to dashboard
                 console.log("User exists in Firestore");
                 const passengerNameUrl = user.displayName.replace(/\s+/g, '-');
-                Navigate(`/passenger/${passengerNameUrl}`);
+                Navigate(`/passenger/${passengerNameUrl}`, { replace: true });
             } else {
                 alert('Register first then try to Log-In')
                 Navigate(-1);
