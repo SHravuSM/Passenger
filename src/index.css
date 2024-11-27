@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%); /* Start position: off-screen to the right */
+  }
+  50% {
+    transform: translateX(
+      0%
+    ); /* Move the text to the left edge of the container */
+  }
+  100% {
+    transform: translateX(-100%); /* Move the text off-screen to the left */
+  }
+}
+
+.animate-scroll {
+  display: inline-block;
+  animation: scroll 10s ease infinite; /* Animation duration and infinite loop */
+  animation-timing-function: ease-in;
+  animation-delay: 1s; /* Adds a short pause at the end of each cycle */
+}
